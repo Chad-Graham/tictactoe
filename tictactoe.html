@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Additional CSS must be placed after Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Tic-Tac-Toe Portfolio Project</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row" id="title"><h2 id="title2">tic-tac-toe</h2></div>
+
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col table-responsive" id="center">
+                    <table class="table">
+                        <tbody id ="gameboard" class="bg-white text-light">
+                            <tr>
+                                <td class ="square" id="sq1"></td>
+                                <td class ="square" id="sq2"><img src="img/x.png"></td>
+                                <td class ="square" id="sq3"></td>
+                            </tr>
+                            <tr>
+                                <td class ="square" id="sq4"><img src="img/O.png"></td>
+                                <td class ="square" id="sq5"></td>
+                                <td class ="square" id="sq6"></td>
+                            </tr>
+                            <tr>
+                                <td class ="square" id="sq7"></td>
+                                <td class ="square" id="sq8"></td>
+                                <td class ="square" id="sq9"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+            <div class="col-sm"></div>
+       </div> 
+    </div>
+
+ 
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

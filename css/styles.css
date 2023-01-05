@@ -1,0 +1,118 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+#center {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#gameboard {
+    width: 310px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+}
+
+#sq1 {
+    box-shadow: 3px 5px 2px black;
+}
+
+#sq2 {
+    box-shadow: -7px -1px 2px black;
+}
+
+#sq3 {
+    box-shadow: -3px 7px 2px black;
+}
+
+#sq4 {
+    box-shadow: 6px 3px 2px black;
+}
+
+#sq5 {
+    box-shadow: -5px -5px 2px black;
+}
+
+#sq6 {
+    box-shadow: -3px 2px 2px black;
+}
+
+#sq7 {
+    box-shadow: 0px -2x 1px black;
+}
+
+#sq8 {
+    box-shadow: 1px -7px 2px black;
+}
+
+#sq9 {
+    box-shadow: -1px -1px 1px black;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+td+td {
+    border-left: 3px double black;
+
+}
+
+tr+tr {
+    border-top: 3px double black; 
+}
+
+
+
+
+
+#title {
+    padding-top: 10px;
+    justify-content: center;
+}
+
+#title2 {
+    background-color: black;
+    color: white;
+    text-shadow: white 3px 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+
+header h2 {
+    color: #CEC8FF;
+}
+
+.site-footer {
+    background-image: linear-gradient(#CEC8FF, white);
+    padding: 20px 0;
+}
+
+.jumbotron {
+    padding: 30px;
+    background-image: linear-gradient(to right, #5637DD, #3046C5, #60106B);
+    color: white;
+    margin: 0;
+}
+
+.row-content {
+    padding: 50px 0;
+    border-bottom: 1px ridge;
+    min-height: 200px;
+}
+
+.navbar {
+    background-color: #901CAD;
+}
