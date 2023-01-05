@@ -2,7 +2,7 @@
   "name": "project",
   "version": "1.0.0",
   "description": "Tic-Tac-Toe javascript game",
-  "main": "index.html",
+  "main": "tictactoe.html",
   "directories": {
     "doc": "docs"
   },
