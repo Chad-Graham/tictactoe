@@ -2,6 +2,23 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+#title {
+    margin-top: 10px;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+#title2 {
+    background-color: black;
+    color: white;
+    text-shadow: white 3px 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
 #center {
     background-color: white;
     display: flex;
@@ -18,6 +35,14 @@ body {
 .square {
     width: 100px;
     height: 100px;
+}
+
+.square:hover {
+    cursor: pointer;
+}
+
+.square img:hover {
+    cursor: default;
 }
 
 #sq1 {
@@ -70,25 +95,27 @@ tr+tr {
     border-top: 3px double black; 
 }
 
-
-
-
-
-#title {
-    padding-top: 10px;
-    justify-content: center;
+#players {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#title2 {
-    background-color: black;
-    color: white;
-    text-shadow: white 3px 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+#leftplayer {
+    margin-right: 30px;
 }
+
+
+#dropdown {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
 
 
 header h2 {
