@@ -9,13 +9,6 @@ body {
 }
 
 #title2 {
-    background-color: black;
-    color: white;
-    text-shadow: white 3px 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 2px;
-    padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
@@ -42,6 +35,10 @@ body {
 }
 
 .square img:hover {
+    cursor: pointer;
+}
+
+.squareplayed:hover {
     cursor: default;
 }
 
@@ -92,7 +89,7 @@ td+td {
 }
 
 tr+tr {
-    border-top: 3px double black; 
+    border-top: 3px double black;
 }
 
 #players {
@@ -102,7 +99,7 @@ tr+tr {
 }
 
 #leftplayer {
-    margin-right: 30px;
+    margin-right: 31px;
 }
 
 
