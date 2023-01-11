@@ -17,7 +17,7 @@
     <title>Tic-Tac-Toe Portfolio Project</title>
 </head>
 
-<body>
+<body onload="startGame('twoPlayer')">
 
     <div class="container">
         <div class="row" id="title">
@@ -26,7 +26,7 @@
 
         <div class="row">
             <div class="col-sm"></div>
-            <div class="col table-responsive" id="center">
+            <div class="col table" id="center">
                 <table class="table">
                     <tbody id="gameboard" class="bg-white text-light">
                         <tr>
@@ -54,9 +54,11 @@
             <div class="col-sm"></div>
             <div class="col" id="players">
 
-                <span id="leftplayer"><button type="button" id ="lp" class="btn btn-dark" disabled="disabled">player 1:
+                <span id="leftplayer"><button type="button" id="lp" class="btn btn-success" disabled="disabled">player
+                        1:
                         X</button></span>
-                <span id="rightplayer"><button type="button" id = "rp" class="btn btn-dark" disabled="disabled">computer:
+                <span id="rightplayer"><button type="button" id="rp" class="btn btn-outline-dark"
+                        disabled="disabled">player 2:
                         O</button></span>
             </div>
             <div class="col-sm"></div>
@@ -72,10 +74,10 @@
                             Settings:
                         </button>
                         <div class="dropdown-menu">
-                            <a id = "Xchoice" class="dropdown-item active" href="#" onclick="playerX()">1 player: X</a>
-                            <a id = "Ochoice" class="dropdown-item" href="#" onclick="playerO()">1 player: O</a>
-                            <a id = "Twochoice" class="dropdown-item" href="#" onclick="twoChoice()">2 players local</a>
-                            <p class="dropdown-item-text">online match</p>
+                            <a id="Xchoice" class="dropdown-item" href="#">1 player: X</a>
+                            <a id="Ochoice" class="dropdown-item" href="#">1 player: O</a>
+                            <a id="Twochoice" class="dropdown-item active" href="#">2 players local</a>
+                            <p id="2remote" class="dropdown-item-text">online match</p>
                         </div>
                     </div>
                 </span>
@@ -90,7 +92,9 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/gamejs.js">
+        startGame("X");
+    </script>
 </body>
 
 </html>
