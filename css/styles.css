@@ -2,6 +2,7 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+
 #title {
     margin-top: 10px;
     padding-top: 10px;
@@ -28,6 +29,9 @@ body {
 .square {
     width: 100px;
     height: 100px;
+    opacity: 0;
+    filter: alpha(opacity=40);
+    /* For IE8 and earlier */
 }
 
 .square:hover {
@@ -38,44 +42,16 @@ body {
     cursor: pointer;
 }
 
+.squareplayed {
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    opacity: 1;
+}
+
 .squareplayed:hover {
     cursor: default;
-}
-
-#sq1 {
-    box-shadow: 3px 5px 2px black;
-}
-
-#sq2 {
-    box-shadow: -7px -1px 2px black;
-}
-
-#sq3 {
-    box-shadow: -3px 7px 2px black;
-}
-
-#sq4 {
-    box-shadow: 6px 3px 2px black;
-}
-
-#sq5 {
-    box-shadow: -5px -5px 2px black;
-}
-
-#sq6 {
-    box-shadow: -3px 2px 2px black;
-}
-
-#sq7 {
-    box-shadow: 0px -2x 1px black;
-}
-
-#sq8 {
-    box-shadow: 1px -7px 2px black;
-}
-
-#sq9 {
-    box-shadow: -1px -1px 1px black;
 }
 
 table {
@@ -84,12 +60,12 @@ table {
 }
 
 td+td {
-    border-left: 3px double black;
+    border-left: 5px outset rgb(133, 129, 129);
 
 }
 
 tr+tr {
-    border-top: 3px double black;
+    border-top: 5px outset rgb(133, 129, 129);
 }
 
 #players {
