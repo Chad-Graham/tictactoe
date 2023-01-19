@@ -4,6 +4,7 @@ let temp = "13";
 let winner = "none";
 let elements = document.getElementsByClassName("square");
 let sqelements = document.getElementsByClassName("squareplayed");
+let totalturns = 0;
 
 function startGame(gametemp) {
 
@@ -307,11 +308,15 @@ function checkWinner() {
             break;
     }
 
+    totalturns += 1;
+    if (totalturns === 9) {
+        haveTie();
+    }
+
+
 
     if (gamesetting !== "2player") {
         console.log(gamesetting);
-
-
         /* delay computer play to make it seem as if it is calculating, but it really isn't */
 
         setTimeout(computerPlays, 1000);
@@ -400,4 +405,9 @@ function haveWinnerO() {
     document.getElementById("sq9").className = "squareplayed";
 
     alert("O wins!");
+}
+
+function haveTie() {
+    alert("Tie game!");
+
 }

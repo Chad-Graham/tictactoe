@@ -10,10 +10,12 @@
 
 1/10/2023   Update javascript, game modes and computer player moves 
 
-1/11/2023   Added win detection, Xwin and Owin game peices
+1/11/2023   Added win detection, Xwin and Owin game pieces
 
 1/14/2023   More javascript refinements
 
-1/16/2023   Improved graphic for winning game peices
+1/16/2023   Improved graphic for winning game pieces
 
-1/18/2023   Added fade in effect for game peices
+1/18/2023   Added fade in effect for game pieces
+
+1/19/2023   Added tie detection 

@@ -60,12 +60,12 @@ table {
 }
 
 td+td {
-    border-left: 5px outset rgb(133, 129, 129);
+    border-left: 3px solid black;
 
 }
 
 tr+tr {
-    border-top: 5px outset rgb(133, 129, 129);
+    border-top: 3px solid black;
 }
 
 #players {
