@@ -19,3 +19,5 @@
 1/18/2023   Added fade in effect for game pieces
 
 1/19/2023   Added tie detection 
+
+1/21/2023   Improved tie detection and computer moves
