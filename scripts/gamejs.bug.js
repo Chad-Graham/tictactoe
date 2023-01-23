@@ -21,9 +21,9 @@ function startGame(gametemp) {
 
     const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     squares.forEach(square => {
-        document.getElementById(`sq${square}`).innerHTML = "<img src='../img/none.png' />";
-        document.getElementById(`sq${square}`).className = "square";
-        document.getElementById(`sq${square}`).dataset.square = "0";
+      document.getElementById(`sq${square}`).innerHTML = "<img src='../img/none.png' />";
+      document.getElementById(`sq${square}`).className = "square";
+      document.getElementById(`sq${square}`).dataset.square = "0";
     });
 
 
@@ -48,8 +48,8 @@ function startGame(gametemp) {
         document.getElementById("Twochoice").className = "dropdown-item";
         document.getElementById("2remote").className = "dropdown-item";
 
-        document.getElementById("sq5").className = "squareplayed";
         document.getElementById("sq5").innerHTML = "<img src='../img/X.png' />";
+        document.getElementById("sq5").className = "squareplayed";
         document.getElementById("sq5").dataset.square = "1";
 
     } else {
@@ -117,178 +117,42 @@ function clickedOn() {
 
 function checkWinner() {
 
-    switch (sq1.dataset.square + sq2.dataset.square + sq3.dataset.square) {
-        case "111":
-            document.getElementById("sq1").innerHTML = "<img src='../img/Xwin.png' />";
+    let winningCombos = [
+        [sq1.dataset.square, sq2.dataset.square, sq3.dataset.square],
+        [sq4.dataset.square, sq5.dataset.square, sq6.dataset.square],
+        [sq7.dataset.square, sq8.dataset.square, sq9.dataset.square],
+        [sq1.dataset.square, sq4.dataset.square, sq7.dataset.square],
+        [sq2.dataset.square, sq5.dataset.square, sq8.dataset.square],
+        [sq3.dataset.square, sq6.dataset.square, sq9.dataset.square],
+        [sq1.dataset.square, sq5.dataset.square, sq9.dataset.square],
+        [sq3.dataset.square, sq5.dataset.square, sq7.dataset.square]
+    ]
+    let winner;
 
-            document.getElementById("sq2").innerHTML = "<img src='../img/Xwin.png' />";
+    winningCombos.forEach(combination => {
+        if (combination.every(val => val === '111')) winner = 'X';
+        if (combination.every(val => val === '555')) winner = 'O';
 
-            document.getElementById("sq3").innerHTML = "<img src='../img/Xwin.png' />";
-            setTimeout(haveWinnerX, 1000);
-            break;
+        if (winner) {
+            combination.forEach((val, index) => {
+                let sq = document.getElementById(`sq${index + 1}`);
+                sq.innerHTML = `<img src='../img/${winner}win.png' />`;
+            });
+            setTimeout(() => {
+                if (winner === 'X') {
+                    haveWinnerX();
+                } else {
+                    haveWinnerO();
+                }
+            }, 1000);
+        }
+    });
 
-        case "555":
-            document.getElementById("sq1").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq2").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq3").innerHTML = "<img src='../img/Owin.png' />";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq4.dataset.square + sq5.dataset.square + sq6.dataset.square) {
-        case "111":
-            document.getElementById("sq4").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq6").innerHTML = "<img src='../img/Xwin.png' />";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq4").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq6").innerHTML = "<img src='../img/Owin.png' />";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq7.dataset.square + sq8.dataset.square + sq9.dataset.square) {
-        case "111":
-            document.getElementById("sq7").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq8").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq9").innerHTML = "<img src='../img/Xwin.png' />";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq7").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq8").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq9").innerHTML = "<img src='../img/Owin.png' />";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq1.dataset.square + sq4.dataset.square + sq7.dataset.square) {
-        case "111":
-            document.getElementById("sq1").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq4").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq7").innerHTML = "<img src='../img/Xwin.png' />";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq1").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq4").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq7").innerHTML = "<img src='../img/Owin.png' />";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq2.dataset.square + sq5.dataset.square + sq8.dataset.square) {
-        case "111":
-            document.getElementById("sq2").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq8").innerHTML = "<img src='../img/Xwin.png' />";
-            winner = "X";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq2").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq8").innerHTML = "<img src='../img/Owin.png' />";
-            winner = "O";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq3.dataset.square + sq6.dataset.square + sq9.dataset.square) {
-        case "111":
-            document.getElementById("sq3").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq6").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq9").innerHTML = "<img src='../img/Xwin.png' />";
-            winner = "X";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq3").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq6").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq9").innerHTML = "<img src='../img/Owin.png' />";
-            winner = "O";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq1.dataset.square + sq5.dataset.square + sq9.dataset.square) {
-        case "111":
-            document.getElementById("sq1").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq9").innerHTML = "<img src='../img/Xwin.png' />";
-            winner = "X";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq1").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq9").innerHTML = "<img src='../img/Owin.png' />";
-            winner = "O";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
-    switch (sq3.dataset.square + sq5.dataset.square + sq7.dataset.square) {
-        case "111":
-            document.getElementById("sq3").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Xwin.png' />";
-
-            document.getElementById("sq7").innerHTML = "<img src='../img/Xwin.png' />";
-            winner = "X";
-            setTimeout(haveWinnerX, 1000);
-            break;
-
-        case "555":
-            document.getElementById("sq3").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq5").innerHTML = "<img src='../img/Owin.png' />";
-
-            document.getElementById("sq7").innerHTML = "<img src='../img/Owin.png' />";
-            winner = "O";
-            setTimeout(haveWinnerO, 1000);
-            break;
-    }
-
+    /* check for tie */ 
     totalturns += 1;
     if (totalturns === 9) {
-        console.log("have tie at 318 checkWinner after player move");
-        setTimeout(haveTie, 1000);
+        console.log("have tie at 154");
+        haveTie();
     }
 
 
@@ -296,9 +160,9 @@ function checkWinner() {
     if (gamesetting !== "2player") {
         console.log(gamesetting);
         /* delay computer play to make it seem as if it is calculating, but it really isn't */
-        elements = document.getElementsByClassName("square");
+        sqelements = document.getElementsByClassName("square");
 
-        if (elements.length > 0) {
+        if (sqelements.length > 0) {
             setTimeout(computerPlays, 1000);
         }
 
@@ -453,7 +317,7 @@ function computerPlays() {
 
     if (sqelements.length === 0) {
         console.log("have tie at 479 after computer play");
-        setTimeout(haveTie, 1000);
+        haveTie();
     } else {
         if (computerMove === "none") {
             let random = Math.floor(Math.random() * sqelements.length);
@@ -463,7 +327,7 @@ function computerPlays() {
         }
 
         /* checking computerMove again prevents followuing code from running after tie */
-        if (computerMove !== "none") {
+        if (computerMove !== "none" && winner === "none") {
             console.log("computer move " + computerMove);
             console.log("best X move " + bestXmove);
             console.log("best O move " + bestOmove);
@@ -658,7 +522,7 @@ function computerPlays() {
             totalturns += 1;
             if (totalturns === 9) {
                 console.log("have tie at 682");
-                setTimeout(haveTie, 1000);
+                haveTie();
             }
 
         }
@@ -690,7 +554,7 @@ function haveWinnerX() {
 
     winner = "X";
     alert("X wins!");
-    window.location.reload();
+
 }
 
 function haveWinnerO() {
@@ -713,14 +577,11 @@ function haveWinnerO() {
     document.getElementById("sq8").className = "squareplayed";
     document.getElementById("sq9").className = "squareplayed";
 
-    winner = "O";
+    winner = "Y";
     alert("O wins!");
-    window.location.reload();
 }
 
 function haveTie() {
-    if (winner === "none") {
-        alert("Tie game!");
-        window.location.reload();
-    }
+    alert("Tie game!");
+
 }
